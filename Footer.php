@@ -1,7 +1,7 @@
 
   <blockquote>
       <p> Lập trình WEB 1</p>
-      <footer class="blockquote-footer">@copy;2020 Minh Hiếu</footer>
+      <footer class="blockquote-footer">@copy do an web 17ck1</footer>
   </blockquote>
 </div>
   
