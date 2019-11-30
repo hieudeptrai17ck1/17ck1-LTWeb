@@ -5,7 +5,7 @@
     use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
-    require './vendor/autoload.php';
+    
     require_once 'init.php';
     function sum($a,$b)
     {
