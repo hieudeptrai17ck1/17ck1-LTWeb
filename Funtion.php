@@ -5,7 +5,11 @@
     use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
+<<<<<<< HEAD
     require './vendor/autoload.php';
+=======
+    
+>>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
     require_once 'init.php';
     function sum($a,$b)
     {
@@ -39,6 +43,7 @@
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+<<<<<<< HEAD
     function updateUserProfile($id,$displayName,$phoneNumber,$avatar)
     {
         global $db;
@@ -47,6 +52,15 @@
     }
 
      
+=======
+    function updateUserProfile($id,$displayName)
+    {
+        global $db;
+        $stmt =$db->prepare("UPDATE users SET displayName=? WHERE id=?");
+        $stmt->execute(array($displayName,$id));
+    }
+
+>>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
     function UpdateUserPassword($id, $password){
         global $db;
         $hashPassword = password_hash($password,PASSWORD_DEFAULT);
@@ -54,7 +68,11 @@
         return $stmt->execute(array($hashPassword,$id));
     }
     
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
 
     function createUser($displayName,$email,$password){
         global $db;
@@ -120,6 +138,7 @@
                 $mail->send();
  
     }
+<<<<<<< HEAD
  function resizeImage($filename, $max_width, $max_height)
 {
   list($orig_width, $orig_height) = getimagesize($filename);
@@ -244,3 +263,5 @@ function removeFriendRequest($userId1,$userId2)
 //friend
 
 
+=======
+>>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831

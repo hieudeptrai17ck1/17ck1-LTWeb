@@ -9,6 +9,7 @@
 ?>
 
 <?php include 'Header.php';?>
+<<<<<<< HEAD
 <br><br><br><br><br>
     <h1>Cập nhật thông tin cá nhân</h1>
 <?php if(isset($_POST['displayName'])&& isset($_POST['phoneNumber'])): ?>
@@ -32,6 +33,19 @@
                 $success =true;
         }
     updateUserProfile($currentUser['id'],$displayName,$phoneNumber,$avatar);   
+=======
+    <h1>Cập nhật thông tin cá nhân</h1>
+<?php if(isset($_POST['displayName'])): ?>
+<?php
+
+   $displayName=$_POST['displayName'];
+   $success =false;
+   if($displayName !='')
+   {
+        updateUserProfile($currentUser['id'],$displayName);
+        $success =true;
+   }
+>>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
 ?>
 
 <?php if($success): ?>
@@ -42,6 +56,7 @@
     </div>
 <?php endif; ?>
 <?php else: ?>
+<<<<<<< HEAD
     <form class="frm4" action="update-profile.php"method ="POST"enctype="multipart/form-data">
         <div class="form-group">
             <label for="displayName">Họ tên</label>
@@ -67,12 +82,26 @@
         <div class="form-group">
             <label for="exampleFormControlFile1">Ảnh đại diện</label>
             <input type="file" class="form-control-file" id="avatar" name="avatar">
+=======
+    <form action="update-profile.php"method ="POST">
+        <div class="form-group">
+            <label for="displayName">Họ tên</label>
+            <input type="text"class="form-control"id="displayName"name="displayName"placeholder="Họ tên" value="<?php echo $currentUser['displayName'];?>">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Ảnh đại diện</label>
+            <input type="file" class="form-control-file" id="avarta" name="avarta">
+>>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
         </div>
         <button type="submit"class="btn btn-primary">Cập nhật thông tin cá nhân</button>
     </form>
     <?php endif; ?>
+<<<<<<< HEAD
 <!-- Bổ sung thoogn tin cá nhân -->
 <?php include 'Footer.php';?>
 
 
 
+=======
+<?php include 'Footer.php';?>
+>>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831

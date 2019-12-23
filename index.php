@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php   
     
     require_once 'init.php';   
@@ -103,3 +104,16 @@
 <br>
 <?php include 'Footer.php';?>
 
+=======
+<?php
+    require_once 'init.php';
+    //$_POST =getNewFeed();
+?>
+ <?php include 'Header.php';?>
+
+<div class="headmid">
+    <h1 class="a">WELLCOME TO WEBSITE</h1>
+</div>
+
+<?php include 'Footer.php';?>
+>>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
