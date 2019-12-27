@@ -1,36 +1,43 @@
 <?php
-    require_once 'init.php';
+    ob_start();
+    require_once 'init.php';  
     if(!$currentUser)
     {
         header('location: index.php');
-        exit();
+        exit();     
     }
-//xử lí logi ở đây
+    $fullSelect =SelectFriendById($currentUser['id']);//từ mình
 ?>
+ <?php include 'Header.php';?>
+ <form style="margin-left:600px;background-color: aquamarine" >
+    <h5 style="margin-top:100px" >
+        <?php
+            echo '<center>Thông báo</center>';
+            foreach($fullSelect as $row)
+            {
+                $NameuserSend=findUserById($row['userId1']);
+                echo '<h6>Bạn có  yêu cầu kết bạn từ <a href="profile.php?id='.$row['userId1'].'">'.$NameuserSend['displayName'].'</a> </h4>';
+            }          
+        ?>
+    </h5>
+ </form>
 
-<?php include 'Header.php';?>
-<br><br><br><br><br><br>
-    <h1>Tính tổng hai số</h1>
-<?php if(isset($_POST['number1'])&&isset($_POST['number2'])): ?>
-<?php
-    $number1 =$_POST['number1'];
-    $number2 =$_POST['number2'];
-    $sum=sum($number1,$number2);
-?>
-<div class="alert alert-primary"role="alert">
-    kết quả tổng hai số <?php echo $number1;?> va <?php echo $number2;?> la <?php echo $sum?>
+<div style="margin-top:100px">
+    <h3>Danh sách bạn bè</h3>
+    <?php
+        foreach($fullSelect as $row1)
+        {
+            $isfollowing=getFriendship($currentUser['id'],$row1['userId1']);
+            $isfollower=getFriendship($row1['userId1'],$currentUser['id']);
+            $NameuserSend1=findUserById($row1['userId1']);
+            //nếu là bạn bè
+            if( $isfollowing&&$isfollower)   
+            {
+                echo '<img  src="data:image/jpeg;base64,'.base64_encode( $NameuserSend1['avatar'] ).'" width="100px" height="100px" style="border-radius:250px;boder:1px solid #ddd; margin-left:20px"/><a href="profile.php?id='.$row1['userId1'].'">'.$NameuserSend1['displayName'].'</a>';
+            }    
+        }
+    ?>
 </div>
-<?php else: ?>
-    <form class="frm1" action="sum.php"method ="POST">
-        <div class="form-group">
-            <label for="number1">số thứ nhất</label>
-            <input type="text"class="form-control"id="number1"name="number1">
-        </div>
-        <div class="form-group">
-            <label for="number1">số thứ 2</label>
-            <input type="text"class="form-control"id="number2"name="number2">
-        </div>
-        <button type="submit"class="btn btn-primary">Tính Tổng</button>
-    </form>
-    <?php endif; ?>
 <?php include 'Footer.php';?>
+
+

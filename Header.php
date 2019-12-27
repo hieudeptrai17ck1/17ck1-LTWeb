@@ -1,22 +1,21 @@
-<<<<<<< HEAD
 <?php
     require_once 'init.php';
     require_once 'Funtion.php';
 
 ?>
-=======
->>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
 <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="edit.css">;    
+    <link rel="stylesheet" href="edit1.css">;    
+  
     <title>Hiếu đẹp trai nha</title>
   </head>
   <body>
@@ -51,29 +50,6 @@
                     <?php if($currentUser): ?>
                         <li class="nav-item <?php echo $page=='sum'?'active':'' ?>">
                             <a class="nav-link" href="Banbe.php">Bạn bè</a>
-=======
-    <link rel="stylesheet" href="edit1.css">;    
-    <title>Do an 17ck1</title>
-  
-    
-  </head>
-  <body>
-      <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="index.php">HIEUCLUP</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                    <li class="nav-item <?php echo $page=='index'?'active':'' ?>">
-                        <a class="nav-link" href="index.php">Trang chủ </a>
-                    </li>
-                    <?php if($currentUser): ?>
-                        <li class="nav-item <?php echo $page=='sum'?'active':'' ?>">
-                            <a class="nav-link" href="sum.php">Tính tổng</a>
->>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
                         </li>
                     <?php endif;?>          
                     <?php if(!$currentUser): ?>
@@ -88,16 +64,26 @@
                             <a class="nav-link" href="update-profile.php">Cá nhân</a>
                         </li>
                         <li class="nav-item <?php echo $page=='logout'?'active':'' ?>">
-<<<<<<< HEAD
                             <a class="nav-link" href="logout.php">Đăng xuất </a>
-=======
-                            <a class="nav-link" href="logout.php">Đăng xuất <?php echo $currentUser ? '('. $currentUser['displayName'] . ')': '' ?></a>
->>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
                         </li>
                         <li class="nav-item <?php echo $page=='chang-password'?'active':'' ?>">
                             <a class="nav-link" href="chang-password.php">Đổi mật khẩu </a>
                         </li>
-<<<<<<< HEAD
+                        <li>
+                        <form class="form-inline" action="Header.php" method ="post" >
+                            <input class="form-control mr-sm-2" type="search" name="nameFriend"  placeholder="Nhập tên người dùng">
+                            <button class="btn btn-outline-success my-2 my-sm-0" name="ok" type="submit">Tìm</button>
+                            </form>
+                            <?php
+                            if(isset($_POST['ok'])&&isset($_POST['nameFriend']))
+                            {
+                                $name = $_POST['nameFriend'];
+                                $nameId= findUserByName($name);
+                                $idname = $nameId['id'];
+                                echo'<meta http-equiv="refresh" content="0;url=profile.php?id='.$idname.'">';
+                            }             
+                            ?>
+                        </li>
                     <?php endif;?>  
                     <?php endif; ?> 
                 </div>
@@ -124,34 +110,3 @@
             
     
   
-=======
-                    <?php endif;?>
-                    <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                        <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                    </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>  -->
-                </div>
-            </nav>
-
-
-
-  
->>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831

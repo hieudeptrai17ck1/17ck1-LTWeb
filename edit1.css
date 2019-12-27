@@ -1,112 +1,322 @@
+@import url('https://fonts.googleapis.com/css?family=McLaren&display=swap');
+.container .navbar .navbar-brand {
+    color: red;
+    background-color: springgreen;
+    font-family: 'McLaren', cursive;
+    padding: 0;
+}
 
-       @import url('https://fonts.googleapis.com/css?family=McLaren&display=swap');
-      .container .navbar .navbar-brand {
-            color: red;
-            background-color: springgreen;
-            font-family: 'McLaren', cursive;
-            padding: 350;
-            
-        }
+header, footer {
+    padding: 1em;
+    background-color: #2E2E2E;
+    text-align: center;
+    border-left: 2px solid gray;
+    border-collapse: 2px solid gray;
+}
 
-        .bg-light {
-            background-color: MediumSeaGreen;
-        }
+.bg-light {
+    background-color: MediumSeaGreen;
+}
 
-        .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-            color: white;
-            font-family: 'McLaren', cursive;
-        }
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: white;
+    font-family: 'McLaren', cursive;
+}
 
-        .navbar-light .navbar-nav .nav-link {
-            color: white;
-            font-family: 'McLaren', cursive;
-        }
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-family: 'McLaren', cursive;
+}
 
-        h1{
-            text-align: center;
-            font-family: 'McLaren', cursive;
-            padding-bottom: 700px;
-            font-size: 50px;
-            color: tomato;
-        }
+h1 {
+    text-align: center;
+    font-family: 'McLaren', cursive;
+    padding-bottom: 700px;
+    font-size: 50px;
+    color: tomato;
+}
 
-        h1.a {
-            text-align: center;
-            font-family: 'McLaren', cursive;
-            padding-bottom: 350px;
-            font-size: 50px;
-            padding-top:350px;
-            color: white;
-        }
+h1.a {
+    text-align: center;
+    font-family: 'McLaren', cursive;
+    padding-bottom: 350px;
+    font-size: 50px;
+    padding-top: 350px;
+    color: white;
+}
 
-        h1:hover {
-            color: yellow;
-            transition: .5s;
-            opacity: 1;
-            filter: alpha(opacity=50);
-        }
-         body {
-            margin: 0;
-            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #212529;
-            text-align: left;
-            background-image: url("https://chaptershealth.org/wp-content/uploads/2017/12/171219-globecover.jpg");
-            background-size: cover;
-        }
+h1:hover {
+    color: yellow;
+    transition: .5s;
+    opacity: 1;
+    filter: alpha(opacity=50);
+}
 
-        form {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 400px;
-            padding: 30px;
-            background-color: pink;
-            opacity: 0.9;
-            box-sizing: border-box;
-            box-shadow: 0 15px 25px rgba(0,0,0,.5);
-            border-radius: 10px;  
-        }
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-image: url("https://img2.thuthuatphanmem.vn/uploads/2018/12/30/anh-nen-background-dep_110341229.jpg");
+    background-size: cover;
+}
 
-        nav{
-            background-color: blueviolet;
-            opacity: 0.9;
-           
-        }
-        nav:hover{
-            color: black;
-            transition: .5s;
-            opacity: 1;
-            filter: alpha(opacity=50);
-        }
+.frm {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 260px;
+    margin-top: 250px;
+    margin-left: -300px;
+    padding: 30px;
+    background-color: pink;
+    opacity: 0.9;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
 
-        .footer{
-            border: 1px;
-            border-style: solid;
-         
-            background-color: white;
-        }
-        
-        blockquote {
-            margin: 0 0 1rem;
-            background-color: red;
-        }
+.frm1 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    margin-top: 350px;
+    padding: 30px;
+    background-color: pink;
+    opacity: 0.9;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
 
-        .alert {
-            position: relative;
-            padding: .75rem 1.25rem;
-            margin-bottom: 1000px;
-            margin-top: -650px;
-            border: 1px solid transparent;
-            border-radius: .25rem;
-            text-align: left;
-            color: cornsilk;
-            background-color: lightblue;
-        } 
+.frm4 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 30px;
+    margin-top: 500px;
+    background-color: pink;
+    opacity: 0.9;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
 
-      
-        
- 
+.like {
+    background: rgb(0, 173, 204);
+    border-radius: 2px;
+    border: 1px solid rgb(0, 225, 255);
+    padding: 2px;
+    color: #fff;
+    margin: 2px;
+}
+
+.xoa {
+    border-radius: 2px;
+    border: 1px solid rgb(0, 225, 255);
+    padding: 2px;
+    color: rgb(0, 174, 255);
+    margin: 2px;
+}
+
+.like:hover {
+    background: rgba(255, 255, 255, 0.795);
+    padding: 2px;
+}
+
+/* .xoa:hover
+        {
+        background: #f5f5f5;
+        padding:2px;
+        } */
+
+nav {
+    background-color: midnightblue;
+    opacity: 0.9;
+}
+
+nav:hover {
+    color: black;
+    transition: .5s;
+    opacity: 1;
+    filter: alpha(opacity=50);
+}
+
+.footer {
+    border: 1px;
+    border-style: solid;
+    background-color: white;
+}
+
+blockquote {
+    margin-top: 650px;
+    background-color: white;
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1000px;
+    margin-top: -650px;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    text-align: left;
+    color: cornsilk;
+    background-color: lightblue;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+#btnLike {
+    width: 150px;
+    height: 40px;
+    background-position: left;
+    text-align: center;
+    padding-right: 20px;
+    background: none;
+    border: 1px solid #bebef3;
+    color: aqua;
+    display: block;
+}
+
+#btnLike .fa {
+    font-size: 20px;
+    float: left;
+    margin-left: 10px;
+    color: aqua;
+}
+
+#btnComment {
+    width: 150px;
+    height: 40px;
+    background-position: left;
+    text-align: right;
+    padding-right: 10px;
+    background: none;
+    border: 1px solid #bebef3; 
+    color: aqua;
+    margin-top: -40px;
+    margin-left: 150px;
+    display: block;
+}
+
+#btnComment .fa {
+    font-size: 20px;
+    float: left;
+    margin-left: 10px;
+    color: aqua;
+}
+.divLike {
+   width: 500px;
+}
+.hr1{
+    border-top: 1px solid aqua;
+}
+.hr-comment{
+    margin-top: 10px;
+    margin-left: -15px;
+    margin-right: -15px;
+    border-top: 1px solid aqua;
+}
+.countLike{ 
+    font-size: 18px;
+    font-weight: 200;
+    color: #9FA5D5;
+    display: inline-block;
+}
+.imgLike{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+.img-comment{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 100%;
+    display: inline-block;
+}
+.div-us-comment input{
+    border-radius: 15px;
+    margin-right: 10px;
+    width: 860px;
+    display: inline-block;
+}
+.div-comment1{
+    margin-top: 30px;
+    display: none;
+}
+.BTN-comment{
+    height: 40px;
+    width: 130px;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 18px;
+    color: darkcyan;
+    border: 1px solid blue;
+    display: inline-block;
+
+}
+.list-group-item{
+    background-color: rgb(237, 234, 248);
+    margin-top: -50px;
+    width: 1000px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    display: inline-block;
+}
+.div-show-comment 
+{
+    padding-bottom: 11px;
+}
+.div-show-comment li 
+{
+    font-size: 14px;
+    color: rgb(119, 179, 179);
+}
+.frm5
+{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 30px;
+    margin-top: 350px;
+    margin-left: 350px;
+    background-color: pink;
+    opacity: 0.9;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    border-radius: 10px; 
+    
+}
+.frm6
+{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    padding: 30px;
+    margin-top: 300px;
+    margin-left: -250px;
+    background-color: white;
+    opacity: 0.9;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    border-radius: 10px; 
+    font-size: 1rem;
+}

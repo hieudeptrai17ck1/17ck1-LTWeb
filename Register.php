@@ -6,10 +6,7 @@
 ?>
 
 <?php include 'Header.php';?>
-<<<<<<< HEAD
 <br><br>
-=======
->>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
     <h1>Đăng Ký</h1>
 <?php if(isset($_POST['displayName'])&&isset($_POST['email'])&&isset($_POST['password'])): ?>
 <?php
@@ -38,11 +35,7 @@
     </div>
 <?php endif; ?>
 <?php else: ?>
-<<<<<<< HEAD
     <form class="frm1" action="Register.php"method ="POST">
-=======
-    <form action="Register.php"method ="POST">
->>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
         <div class="form-group">
             <label for="displayName">Tên người dùng</label>
             <input type="text"class="form-control"id="displayName"name="displayName" placeholder="Họ tên">

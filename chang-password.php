@@ -10,10 +10,7 @@
 ?>
 
 <?php include 'Header.php';?>
-<<<<<<< HEAD
 <br><br>
-=======
->>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
     <h1>Đổi mật khẩu</h1>
 <?php if(isset($_POST['currentpassword'])&&isset($_POST['password'])): ?>
 <?php
@@ -39,11 +36,7 @@
     </div>
 <?php endif; ?>
 <?php else: ?>
-<<<<<<< HEAD
     <form class="frm1" action="chang-password.php"method ="POST">
-=======
-    <form action="chang-password.php"method ="POST">
->>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
     <div class="form-group">
             <label for="currentpassword">Mật khẩu hiện tại</label>
             <input type="password"class="form-control"id="currentpassword"name="currentpassword"placeholder="Mật khẩu hiện tại">

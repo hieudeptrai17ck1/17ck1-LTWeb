@@ -5,16 +5,40 @@
     use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
-<<<<<<< HEAD
     require './vendor/autoload.php';
-=======
-    
->>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
     require_once 'init.php';
     function sum($a,$b)
     {
         $c=$a+$b;
         return $c;
+    }
+    function CountLike($idPost)
+    {
+        global $db;
+        $stmt =$db->prepare("SELECT * FROM likes WHERE postid=?");
+        $stmt->execute(array($idPost));
+        return $stmt -> fetchALL(PDO::FETCH_ASSOC);
+    }
+    function CheckLike($idPost,$userID)
+    {
+        global $db;
+        $stmt =$db->prepare("SELECT * FROM likes WHERE userid =? AND postid=?");
+        $stmt->execute(array($userID,$idPost));
+        return $stmt -> fetchALL(PDO::FETCH_ASSOC);
+    }
+    function LoadComment($idPost)
+    {
+        global $db;
+        $stmt =$db->prepare("SELECT * FROM comments WHERE postid=?");
+        $stmt->execute(array($idPost));
+        return $stmt -> fetchALL(PDO::FETCH_ASSOC);
+    }
+    function SelectFriendById($userId2)
+    {
+        global $db;
+        $stmt =$db->prepare("SELECT * FROM freindship where userId2=?");
+        $stmt->execute(array($userId2));
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     function detecPage()
@@ -43,24 +67,13 @@
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-<<<<<<< HEAD
-    function updateUserProfile($id,$displayName,$phoneNumber,$avatar)
+    function updateUserProfile($id,$displayName,$ngaySinh,$phoneNumber,$avatar)
     {
         global $db;
-        $stmt =$db->prepare("UPDATE users SET displayName=?,phoneNumber =?,avatar=? WHERE id=? ");
-        $stmt->execute(array($displayName,$phoneNumber,$avatar,$id));
+        $stmt =$db->prepare("UPDATE users SET displayName=?,ngaySinh=?,phoneNumber =?,avatar=? WHERE id=? ");
+        $stmt->execute(array($displayName,$ngaySinh,$phoneNumber,$avatar,$id));
     }
-
      
-=======
-    function updateUserProfile($id,$displayName)
-    {
-        global $db;
-        $stmt =$db->prepare("UPDATE users SET displayName=? WHERE id=?");
-        $stmt->execute(array($displayName,$id));
-    }
-
->>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
     function UpdateUserPassword($id, $password){
         global $db;
         $hashPassword = password_hash($password,PASSWORD_DEFAULT);
@@ -68,11 +81,7 @@
         return $stmt->execute(array($hashPassword,$id));
     }
     
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
 
     function createUser($displayName,$email,$password){
         global $db;
@@ -81,7 +90,7 @@
         $stmt=$db->prepare("INSERT INTO users (displayName,email,password,status,code) VALUES (? , ?, ?,?,?)");
         $stmt->execute(array($displayName,$email,$hashPassword,0,$code));
        $id= $db->lastInsertId();
-       $id =sendEmail($email,$displayName,'kích hoạt tài khoản',"mã kích hoạt tài khoản của bạn là <a href=\"http://localhost:8080/PhanTrang/activate.php?code=$code\">http://localhost:8080/PhanTrang/activate.php?code=$code</a>");
+       $id =sendEmail($email,$displayName,'kích hoạt tài khoản',"mã kích hoạt tài khoản của bạn là <a href=\"http://localhost:81/PhanTrang/activate.php?code=$code\">http://localhost:8080/PhanTrang/activate.php?code=$code</a>");
        return $id;
     }
 
@@ -138,7 +147,6 @@
                 $mail->send();
  
     }
-<<<<<<< HEAD
  function resizeImage($filename, $max_width, $max_height)
 {
   list($orig_width, $orig_height) = getimagesize($filename);
@@ -263,5 +271,10 @@ function removeFriendRequest($userId1,$userId2)
 //friend
 
 
-=======
->>>>>>> ca52af01ebf3fcb8ac6bcad79331e6c6bfae5831
+function findUserByName($displayName)
+{
+    global $db;
+    $stmt =$db->prepare("SELECT * FROM users WHERE displayName=?");
+    $stmt->execute(array($displayName));
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
